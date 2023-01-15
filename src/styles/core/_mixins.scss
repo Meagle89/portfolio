@@ -1,4 +1,4 @@
-@function rem($pixels, $base: 18) {
+@function rem($pixels, $base: 16) {
   $rem: (round(($pixels / $base) * 100) / 100); // 2dp
   @return $rem * 1rem;
 }

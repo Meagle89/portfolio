@@ -1,0 +1,17 @@
+.button {
+  height:100%;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: 1px solid $tint-colour;
+  letter-spacing: 2px;
+  transition: all .15s ease;
+  border-radius: 6px;
+  font-size:1.1rem;
+
+  &:hover {
+    background: $tint-colour;
+  }
+}
