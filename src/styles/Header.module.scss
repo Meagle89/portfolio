@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+
+  &__logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+
+    &--green {
+      color: $tint-colour;
+    }
+  }
+
+  &--container {
+    padding: rem(30) rem(150);
+  }
+
+  .nav {
+    width: calc(100%/3);
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $primary-text;
+    font-size: 1.2rem;
+   
+    &::after {
+      position: absolute;
+      content: "";
+      height: 2px;
+      width: 100%;
+      background-color: transparent;
+      bottom: -5px;
+      left: 0;
+    }
+
+    &:hover::after {
+      background-color: $primary-text;
+    }
+
+    &--active {
+      &::after {
+        background-color: $primary-text;
+      }
+    }
+
+    &--green {
+      color: $tint-colour;
+    }
+  }
+}

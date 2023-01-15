@@ -1,0 +1,22 @@
+@function rem($pixels, $base: 18) {
+  $rem: (round(($pixels / $base) * 100) / 100); // 2dp
+  @return $rem * 1rem;
+}
+
+@mixin smaller($max-width) {
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin larger($min-width) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin between($min-width, $max-width) {
+  @media screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
