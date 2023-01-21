@@ -12,7 +12,7 @@ export default function Hero() {
   }, []);
 
   const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
+      console.log(container);
   }, []);
   return (
     <div className={styles.hero}>
@@ -91,7 +91,7 @@ export default function Hero() {
           
 
       <div className={styles.hero__content}>
-        <h1>
+        <h1 className={styles['hero__content--title']}>
           <span>Hello,</span>
           <br />
           <span>

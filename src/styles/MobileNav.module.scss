@@ -1,0 +1,124 @@
+.mobileNav {
+  position: absolute;
+  transform: translateX(100vw);
+  height: 100vh;
+  background-color: $primary-colour;
+  width: 100vw;
+  padding: rem(78) rem(20);
+  transition: transform 0.3s ease-in;
+  top: 80px;
+  left: 0;
+  z-index: 2;
+  overflow: hidden;
+
+  img {
+    border-radius: 9999px;
+    overflow: hidden;
+    margin: 0 auto;
+    display: block;
+  }
+
+  @include larger($bp-md) {
+    width: 50vw;
+  }
+
+  @include larger($bp-lg) {
+    display: none;
+  }
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'NotoSansJP';
+    transition: opacity 0.3s ease-in;
+    text-align: center;
+    margin: 36px 0;
+    &--green {
+      color: $primary-colour;
+    }
+  }
+
+  &__links {
+    margin: 48px auto;
+    display: flex;
+    justify-content: space-around;
+
+    &--link {
+      position: relative;
+      text-decoration: none;
+      color: $primary-text;
+      font-size: 1.1rem;
+      font-family: 'NotoSansJP';
+      display: flex;
+      align-items: center;
+
+      &::after {
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 100%;
+        background-color: transparent;
+        bottom: -14px;
+        left: 0;
+      }
+
+      &:hover::after {
+        background-color: $primary-colour;
+      }
+
+      &--active {
+        &::after {
+          background-color: $primary-colour;
+        }
+      }
+
+      &--green {
+        fill: $primary-colour;
+        width: 2.5rem;
+        height: auto;
+      }
+    }
+  }
+}
+
+@keyframes animated {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  20% {
+    border-radius: 54% 46% 81% 19% / 29% 54% 46% 71%;
+  }
+
+  50% {
+    border-radius: 38% 62% 57% 43% / 29% 71% 29% 71%;
+  }
+
+  70% {
+    border-radius: 54% 46% 81% 19% / 29% 54% 46% 71%;
+  }
+
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+.blob {
+  background-color: $tint-colour;
+  height: 612px;
+  width: 401px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  margin: 90px auto;
+  animation-name: animated;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}

@@ -1,0 +1,39 @@
+.burger {
+  cursor: pointer;
+  background-color: $primary-colour;
+  outline: none;
+  border: none;
+
+  @include larger($bp-lg) {
+    display: none;
+  }
+
+  &__line {
+    width: 25px;
+    height: 2px;
+    background-color: $primary-text;
+    transition: all .15s ease-in-out;
+
+    &--two {
+      margin: 8px 0;
+    }
+  }
+
+  &--active > &__line {
+    &--one, &--three {
+      background-color: $tint-colour;
+    }
+
+    &--one {
+      transform: rotate(45deg) translate(4px, 10px);
+    }
+
+    &--three {
+      transform: rotate(-45deg) translate(4px, -10px);
+    }
+
+    &--two {
+      transform: scale(0);
+    }
+  }
+}

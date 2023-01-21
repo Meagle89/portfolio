@@ -2,23 +2,48 @@
   display: flex;
   justify-content: space-between;
   list-style: none;
+  position: relative;
 
   &__logo {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: bold;
     font-family: 'NotoSansJP';
+    transition: opacity .3s ease-in;
+
+    @include larger($bp-md) {
+      font-size: 1.4rem;
+    }
+
+    @include larger($bp-lg) {
+      font-size: 1.8rem;
+    }
 
     &--green {
       color: $tint-colour;
     }
+
+    &--active {
+      @include smaller($bp-md) {
+        opacity: 0;
+      }
+    }
   }
 
   &--container {
-    padding: rem(30) rem(150);
+    padding: rem(30) rem(20);
+
+    @include larger($bp-lg) {
+      padding: rem(30) rem(150);
+    }
   }
 
-  .nav {
+  .desktopNav {
     width: calc(100%/3);
+    display: none;
+
+    @include larger($bp-lg) {
+      display: block;
+    }
   }
 
   &__link {

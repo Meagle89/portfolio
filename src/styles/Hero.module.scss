@@ -1,22 +1,38 @@
 .hero {
   position: relative;
 
-
   &__content {
     position: relative;
     z-index: 1;
-    @include larger(1024px) {
+    padding: rem(28) rem(20);
+
+    &--title {
+      font-size: 1.4rem;
+      line-height: 1.2;
+      letter-spacing: 3px;
+
+      @include larger($bp-lg) {
+        font-size: 2rem;
+        line-height: 1.4;
+      }
+    }
+
+    p {
+      color: $secondary-text;
+      font-weight: 300;
+      font-size: 1.1rem;
+      letter-spacing: 1.1px;
+      margin: 30px 0 45px;
+      
+    }
+
+    @include larger($bp-lg) {
       padding: rem(70) rem(132) 0 rem(226);
       font-weight: bold;
       font-size: 1.4rem;
       line-height: 1.4;
-       
+
       p {
-        font-size: 1.1rem;
-        color: $secondary-text;
-        font-weight: 300;
-        letter-spacing: 1.1px;
-        margin: 30px 0 45px;
         white-space: nowrap;
       }
     }
@@ -26,19 +42,28 @@
     }
 
     &__link {
-      height: 75px;
-      width: 280px;
+      height: 65px;
+      width: 260px;
+      margin: 0 auto;
+
+      @include larger($bp-lg) {
+        margin: unset;
+      }
     }
 
     &__icon {
-      width:41px;
+      width: 41px;
       stroke: $secondary-text;
 
       &--container {
         position: relative;
         height: 100px;
-        width:100%;
-        margin-top: 50px;
+        width: 100%;
+        margin-top: 25px;
+        
+        @include larger($bp-lg) {
+          margin-top: 50px;
+        }
       }
 
       &--translate {
@@ -48,18 +73,16 @@
 
       &--top {
         left: 50%;
-
       }
       &--middle {
         left: 50%;
         top: 15%;
       }
       &--bottom {
-        width:80px;
+        width: 80px;
         stroke: $primary-text;
         left: 50%;
       }
     }
-
   }
 }
