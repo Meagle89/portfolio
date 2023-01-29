@@ -1,0 +1,55 @@
+.projectsDemo {
+  &__content {
+    flex-direction: column;
+    justify-content: center;
+
+    @include larger($bp-lg) {
+      padding-top: rem(100);
+      padding-bottom: rem(100);
+      padding-right: rem(75);
+      width: 40%;
+      
+    }
+  }
+
+  &__title {
+    @include larger($bp-md) {
+      font-size: rem(19);
+      letter-spacing: 2px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    columns: 3;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      top:0;
+      height: 100%;
+      width: 100%;
+      content: '';
+      backdrop-filter: blur(2px);
+    
+    }
+
+    @include larger($bp-lg) {
+      width: 60%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    &--item {
+      border: $primary-text 1px solid;
+
+      @include larger($bp-lg) {
+        height: 150px;
+      }
+    }
+  }
+}

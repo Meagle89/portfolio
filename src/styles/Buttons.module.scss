@@ -1,10 +1,25 @@
 .button {
+
+  &__container {
+
+    &--primary {
+      
+      height: 65px;
+      width: 260px;
+    }
+
+    &--secondary {
+      height: 55px;
+      width: 220px;
+    }
+  }
+
   height:100%;
   width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
+  font-weight: 600;
   border: 1px solid $tint-colour;
   letter-spacing: 2px;
   transition: all .15s ease;

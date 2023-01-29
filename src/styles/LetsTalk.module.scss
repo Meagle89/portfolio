@@ -1,0 +1,21 @@
+.letsTalk {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15% 0 25%;
+  }
+
+  &__title {
+    font-size: rem(48);
+    width: 60%;
+    line-height: 1.8;
+    letter-spacing: 3px;
+  }
+
+  &__button {
+    height: 65px;
+    width: 260px;
+  }
+
+}
